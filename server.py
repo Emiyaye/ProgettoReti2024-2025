@@ -57,16 +57,16 @@ def handle_request(client_socket, client_address):
             return
 
         parts = first_line.split(' ')
-        if len(parts) < 3: # Deve essere almeno "METODO /percorso HTTP/VERS"
+        if len(parts) < 3: # Deve essere almeno "METODO, percorso, HTTP/VERS"
             logging.warning(f"[{client_ip}:{client_port}] Richiesta malformata: '{first_line}'.")
             return
             
         method, path, http_version = parts[0], parts[1], parts[2]
         
-        # Log
+        # Log data
         logging.info(f"[{client_ip}:{client_port}] {method} {path} {http_version}")
 
-        # Gestione del metodo HTTP GET
+        # Gestione del metodo HTTP !=GET
         if method != 'GET':
             response_content = "<h1>501 Not Implemented</h1><p>The requested method is not supported.</p>"
             response_header = (
