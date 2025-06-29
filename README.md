@@ -1,3 +1,6 @@
+Cognome e nome: Bao Botti
+Matricola: 0001080230
+
 Traccia 1 – Web Server + Sito Web Statico (livello base/intermedio)
 
 1. Tecnologie Utilizzate
